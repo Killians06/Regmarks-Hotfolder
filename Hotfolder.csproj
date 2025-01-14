@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <ApplicationIcon>hotfolder.ico</ApplicationIcon>
+    <AssemblyTitle>Hotfolder Regmarks</AssemblyTitle>
+    <AssemblyDescription>Application de surveillance de fichiers *.tps avec transformation automatique des Regmarks.</AssemblyDescription>
+    <AssemblyCompany>Killians Streibel</AssemblyCompany>
+    <AssemblyProduct>Hotfolder Regmarks</AssemblyProduct>
+    <Copyright>Killians Streibel</Copyright>
+    <Version>1.1.9</Version>
+    <AssemblyVersion>1.1.9.0</AssemblyVersion> <!-- Spécifier explicitement la version -->
+    <FileVersion>1.1.9.0</FileVersion> <!-- Spécifier explicitement la version -->
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="hotfolder.ico"/>
+    <!-- Inclure le fichier hotfolder.ico dans la sortie de compilation -->
+    <None Update="hotfolder.ico">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <!-- Inclure le fichier settings.json dans la sortie de compilation -->
+    <None Update="settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

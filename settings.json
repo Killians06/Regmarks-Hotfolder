@@ -1,0 +1,9 @@
+{
+    "HotFolderPath": "",
+    "OutputFolderPath": "",
+    "SearchReplacePairs": [
+      { "Search": "Register", "Replace": "Mark" },
+      { "Search": "texte2", "Replace": "remplacement2" }
+    ],
+    "autoStart": false
+}
