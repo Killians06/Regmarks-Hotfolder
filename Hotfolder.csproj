@@ -17,7 +17,7 @@
     <FileVersion>1.1.9.0</FileVersion> <!-- Spécifier explicitement la version -->
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="hotfolder.ico"/>
+    <EmbeddedResource Include="hotfolder.ico" />
     <!-- Inclure le fichier hotfolder.ico dans la sortie de compilation -->
     <None Update="hotfolder.ico">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
