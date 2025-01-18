@@ -21,10 +21,11 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '9.0.x'
+          cache: true
       - name: Install dependencies
         run: dotnet restore
       - name: Build
-        run: dotnet build -c Release -o release — nologo
+        run: dotnet build
 
   test:
     needs: build
@@ -34,8 +35,8 @@ jobs:
        with:
          fetch-depth: 0
 
-    #  - name: Inno Setup Action
-    #    uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
-    #    with:
-    #      path: src/InnoSetupScript.iss
-    #      options: /O+
+     - name: Inno Setup Action
+       uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
+       with:
+         path: src/InnoSetupScript.iss
+         options: /O+
