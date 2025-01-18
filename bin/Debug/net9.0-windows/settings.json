@@ -1,0 +1,15 @@
+{
+  "HotFolderPath": "C:\\Users\\oscos\\Desktop\\testHF\\input",
+  "OutputFolderPath": "C:\\Users\\oscos\\Desktop\\testHF\\output",
+  "autoStart": true,
+  "SearchReplacePairs": [
+    {
+      "Search": "Register",
+      "Replace": "Mark"
+    },
+    {
+      "Search": "CutContourFrame",
+      "Replace": "Cut"
+    }
+  ]
+}
