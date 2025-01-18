@@ -7,31 +7,34 @@ on:
     branches: [ "main" ]
 
 jobs:
+  job-1:
+    build:
 
-  build:
+      strategy:
+        matrix:
+          configuration: [Debug, Release]
 
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
+      runs-on: windows-latest  # For a list of available runner types, refer to
+      steps:
+        - uses: actions/checkout@v4
+        - name: Setup dotnet
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: '9.0.x'
+        - name: Install dependencies
+          run: dotnet restore
+        - name: Test with the dotnet CLI
+          run: dotnet test
+        - name: Build
+          run: dotnet build
 
-    runs-on: windows-latest  # For a list of available runner types, refer to
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '9.0.x'
-      - name: Install dependencies
-        run: dotnet restore
-      - name: Test with the dotnet CLI
-        run: dotnet test
-      - name: Build
-        run: dotnet build
-      - name: Build the Inno Setup Installer
-        runs-on: windows-latest
-        steps:
-          - uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
-          - name: Compile .ISS to .EXE Installer
-            with:
-              path: src/InnoSetupScript.iss
-              options: /O+
+  job-2:
+    build:
+      runs-on: windows-latest
+      steps:
+        - name: Build the Inno Setup Installer
+        - uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
+        - name: Compile .ISS to .EXE Installer
+          with:
+            path: src/InnoSetupScript.iss
+            options: /O+
