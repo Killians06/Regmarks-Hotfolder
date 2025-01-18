@@ -25,6 +25,8 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build
+      - name: Publish
+        run: dotnet publish Regmarks-Hotfolder/Hotfolder.csproj -c Release -o release — nologo
 
   test:
     needs: build
@@ -38,6 +40,4 @@ jobs:
         with:
           path: src/InnoSetupScript.iss
           options: /O+
-      - name: Publish
-        run: dotnet publish Regmarks-Hotfolder/Hotfolder.csproj -c Release -o release — nologo
       
