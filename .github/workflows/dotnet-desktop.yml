@@ -39,4 +39,4 @@ jobs:
     needs:  build
     steps:
       - name: Publish
-      run: dotnet publish Regmarks-Hotfolder/Hotfolder.csproj -c Release -o release — nologo
+        run: dotnet publish Regmarks-Hotfolder/Hotfolder.csproj -c Release -o release — nologo
