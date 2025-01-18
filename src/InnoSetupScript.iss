@@ -3,7 +3,7 @@
 #define MyAppPublisher "Killians Streibel"
 #define MyAppURL "https://github.com/Killians06"
 #define MyAppExeName "Hotfolder.exe"
-#define MyIconPath "src\hotfolder.ico"
+#define MyIconPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\src\hotfolder.ico"
 
 [Setup]
 AppId={{9D7FEA5A-DBEE-4EEC-9013-284CF13A4DB1}
