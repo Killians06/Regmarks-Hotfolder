@@ -35,14 +35,14 @@ Name: "french"; MessagesFile: "compiler:Languages\French.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "{#MyOutputPath}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#MyOutputPath}\Hotfolder.deps.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#MyOutputPath}\Hotfolder.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#MyOutputPath}\Hotfolder.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#MyOutputPath}\Hotfolder.pdb"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#MyOutputPath}\Hotfolder.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#MyOutputPath}\settings.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#MyOutputPath}\hotfolder.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\Hotfolder.deps.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\Hotfolder.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\Hotfolder.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\Hotfolder.pdb"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\Hotfolder.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\settings.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\hotfolder.ico"; DestDir: "{app}"; Flags: ignoreversion
 
 [UninstallDelete]
 Type: files; Name: "{app}\settings.json"
