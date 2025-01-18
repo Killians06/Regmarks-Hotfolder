@@ -35,8 +35,11 @@ jobs:
        with:
          fetch-depth: 0
 
-  publish:
-    needs:  build
-    steps:
-      - name: Publish
-        run: dotnet publish Regmarks-Hotfolder/Hotfolder.csproj -c Release -o release — nologo
+    #  - name: Inno Setup Action
+    #    uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
+    #    with:
+    #      path: src/InnoSetupScript.iss
+    #      options: /O+
+    - name: Publish
+      run: dotnet publish Regmarks-Hotfolder/Hotfolder.csproj -c Release -o release — nologo
+
