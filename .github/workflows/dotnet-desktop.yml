@@ -27,6 +27,8 @@ jobs:
         run: dotnet build
       - name: Publish
         run: dotnet publish
+      - name: Info
+        run: dotnet workload list
 
   test:
     needs: build
