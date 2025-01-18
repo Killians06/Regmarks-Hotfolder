@@ -1,15 +1,9 @@
 {
-  "HotFolderPath": "C:\\Users\\oscos\\Desktop\\testHF\\input",
-  "OutputFolderPath": "C:\\Users\\oscos\\Desktop\\testHF\\output",
-  "autoStart": false,
-  "SearchReplacePairs": [
-    {
-      "Search": "Register",
-      "Replace": "Mark"
-    },
-    {
-      "Search": "sqsqd",
-      "Replace": "remplacement2"
-    }
-  ]
+    "HotFolderPath": "",
+    "OutputFolderPath": "",
+    "SearchReplacePairs": [
+      { "Search": "Register", "Replace": "Mark" },
+      { "Search": "texte2", "Replace": "remplacement2" }
+    ],
+    "autoStart": false
 }

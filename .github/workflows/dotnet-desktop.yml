@@ -42,4 +42,8 @@ jobs:
         with:
           path: src/InnoSetupScript.iss
           options: /O+
+      - name: Save Inno Setup Output
+        run: |
+          mkdir -p release
+          cp "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup\RegMarks Hotfolder Installer.exe" release/
       
