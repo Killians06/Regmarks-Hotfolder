@@ -3,7 +3,7 @@
 #define MyAppPublisher "Killians Streibel"
 #define MyAppURL "https://github.com/Killians06"
 #define MyAppExeName "Hotfolder.exe"
-#define MyPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\bin\Release\net9.0-windows\publish\"
+#define MyPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\bin\Release\net9.0-windows\publish"
 #define MyIconPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\src\hotfolder.ico"
 #define MyOutputPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup"
 
