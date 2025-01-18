@@ -3,6 +3,7 @@
 #define MyAppPublisher "Killians Streibel"
 #define MyAppURL "https://github.com/Killians06"
 #define MyAppExeName "Hotfolder.exe"
+#define MyIconPath "src\hotfolder.ico"
 
 [Setup]
 AppId={{9D7FEA5A-DBEE-4EEC-9013-284CF13A4DB1}
@@ -17,9 +18,9 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
-OutputDir=D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\src\Installer
+OutputDir=C:\Users\oscos\Desktop\testHF\Csharp Edit\InnoTest
 OutputBaseFilename=RegMarks Hotfolder Installer
-SetupIconFile=D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\src\hotfolder.ico
+SetupIconFile={#MyIconPath}
 UninstallDisplayIcon={app}\Hotfolder.exe
 Compression=lzma
 SolidCompression=yes
