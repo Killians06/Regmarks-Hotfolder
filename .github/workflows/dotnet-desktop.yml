@@ -47,5 +47,5 @@ jobs:
           mkdir -p release
           cp "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup\RegMarks Hotfolder Installer.exe" release/
           cd release
-          ls -la
+          ls
       
