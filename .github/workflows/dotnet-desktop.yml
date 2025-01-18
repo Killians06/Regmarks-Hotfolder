@@ -28,7 +28,7 @@ jobs:
       - name: Test with the dotnet CLI
         run: dotnet test
 
-  build:
+  InnoSetup:
     name: Build the Inno Setup Installer
     runs-on: windows-latest
     steps:
