@@ -3,7 +3,7 @@
 #define MyAppPublisher "Killians Streibel"
 #define MyAppURL "https://github.com/Killians06"
 #define MyAppExeName "Hotfolder.exe"
-#define MyIconPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\src\hotfolder.ico"
+#define MyPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\src"
 #define MyOutputPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup"
 
 [Setup]
@@ -21,7 +21,7 @@ DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 OutputDir={#MyOutputPath}
 OutputBaseFilename=RegMarks Hotfolder Installer
-SetupIconFile={#MyIconPath}
+SetupIconFile={#MyPath\hotfolder.ico}
 UninstallDisplayIcon={app}\Hotfolder.exe
 Compression=lzma
 SolidCompression=yes
