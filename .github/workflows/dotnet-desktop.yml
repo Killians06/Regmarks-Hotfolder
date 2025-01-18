@@ -28,13 +28,7 @@ jobs:
         run: dotnet test --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
       - name: Build
         run: dotnet build
-      - name: Upload dotnet test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: dotnet-results-${{ matrix.dotnet-version }}
-          path: TestResults-${{ matrix.dotnet-version }}
-        # Use always() to always run this step to publish test results when there are test failures
-        if: ${{ always() }}
+
   test:
     needs: build
     runs-on: windows-latest
@@ -42,7 +36,13 @@ jobs:
      - uses: actions/checkout@v4
        with:
          fetch-depth: 0
-
+      - name: Upload dotnet test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: dotnet-results-${{ matrix.dotnet-version }}
+          path: TestResults-${{ matrix.dotnet-version }}
+        # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}
      - name: Inno Setup Action
        uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
        with:
