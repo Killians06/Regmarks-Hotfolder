@@ -7,8 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  job-1:
-    build:
+  build:
 
       strategy:
         matrix:
@@ -28,8 +27,7 @@ jobs:
         - name: Build
           run: dotnet build
 
-  job-2:
-    build:
+  innosetup:
       runs-on: windows-latest
       steps:
         - name: Build the Inno Setup Installer
