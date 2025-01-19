@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: dotnet build
       - name: Publish
-        run: dotnet publish
+        run: dotnet publish --output Regmarks-Hotfolder/PUBLISH
       - name: Info
         run: dotnet workload list
 
