@@ -24,10 +24,9 @@ jobs:
 
       - name: Update .csproj version
         run: |
-          sed -i "s/\(<Version>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{github.run_number}}/" Hotfolder/Hotfolder.csproj
-          sed -i 's|<Version>.*</Version>|<Version>${{ env.VERSION }}</Version>|' Hotfolder/Hotfolder.csproj
-          sed -i 's|<AssemblyVersion>.*</AssemblyVersion>|<AssemblyVersion>${{ env.VERSION }}.0</AssemblyVersion>|' Hotfolder/Hotfolder.csproj
-          sed -i 's|<FileVersion>.*</FileVersion>|<FileVersion>${{ env.VERSION }}.0</FileVersion>|' Hotfolder/Hotfolder.csproj
+          sed -i "s/\(<Version>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{ env.VERSION }}/" Hotfolder/Hotfolder.csproj
+          sed -i "s/\(<AssemblyVersion>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{ env.VERSION }}/" Hotfolder/Hotfolder.csproj
+          sed -i "s/\(<FileVersion>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{ env.VERSION }}/" Hotfolder/Hotfolder.csproj
 
       - name: Update Inno Setup script version
         run: |
