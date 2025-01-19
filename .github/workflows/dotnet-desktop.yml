@@ -37,6 +37,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Debug Publish Output
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Listing files in current directory:"
+          dir
+          echo "Listing files in Regmarks-Hotfolder directory:"
+          dir Regmarks-Hotfolder
       - name: Copy Published Files
         run: |
           mkdir -p InnoSetup/PublishedFiles
@@ -52,11 +59,11 @@ jobs:
           echo "Listing files in current directory:"
           dir
           echo "Listing files in InnoSetup directory:"
-          dir D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup
+          dir InnoSetup
       - name: Save Inno Setup Output
         run: |
           mkdir -p release
-          cp "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup\RegMarks Hotfolder Installer.exe" release/
+          cp "InnoSetup/RegMarks Hotfolder Installer.exe" release/
       - name: Verify Inno Setup Output
         run: |
           if (!(Test-Path -Path "release/RegMarks Hotfolder Installer.exe")) {
@@ -87,7 +94,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: Release
+          tag_name: ${{ github.ref_name }}
           release_name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
