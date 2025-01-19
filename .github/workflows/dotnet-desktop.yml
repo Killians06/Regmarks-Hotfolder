@@ -22,11 +22,13 @@ jobs:
         id: extract_version
         run: |
           echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
-          echo "${{ GITHUB_REF#refs/tags/v }}"
 
       - name: Update .csproj version
         run: |
-          sed -i "s/VERSION/${{ GITHUB_REF#refs/tags/v }}/g" Hotfolder.csproj
+          sed -i 's|<Version>.*</Version>|<Version>${{ env.VERSION }}</Version>|' Hotfolder.csproj
+          sed -i 's|<AssemblyVersion>.*</AssemblyVersion>|<AssemblyVersion>${{ env.VERSION }}.0</AssemblyVersion>|' Hotfolder.csproj
+          sed -i 's|<FileVersion>.*</FileVersion>|<FileVersion>${{ env.VERSION }}.0</FileVersion>|' Hotfolder.csproj
+
 
       - name: Update Inno Setup script version
         run: |
