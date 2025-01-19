@@ -25,7 +25,7 @@ jobs:
 
       - name: Test
         run: |
-          echo ${{ GITHUB_ENV.VERSION }}
+          echo ${GITHUB_REF#refs/tags/v}
 
       - name: Update .csproj version
         run: |
