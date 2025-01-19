@@ -43,7 +43,7 @@ jobs:
           cp "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup\RegMarks Hotfolder Installer.exe" release/
       - name: Verify Inno Setup Output
         run: |
-          if [ ! -f "release/RegMarks Hotfolder Installer.exe" ]; then
+          if (! -f "release/RegMarks Hotfolder Installer.exe"); then
             echo "File not found!"
             exit 1
           fi
