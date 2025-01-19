@@ -24,13 +24,11 @@ jobs:
 
       - name: Update .csproj version
         run: |
-          sed -i "s/\(<Version>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{ env.VERSION }}/" Hotfolder/Hotfolder.csproj
-          sed -i "s/\(<AssemblyVersion>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{ env.VERSION }}/" Hotfolder/Hotfolder.csproj
-          sed -i "s/\(<FileVersion>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{ env.VERSION }}/" Hotfolder/Hotfolder.csproj
+          sed -i "s/VERSION/${{ env.VERSION }}/g" Hotfolder/Hotfolder.csproj
 
       - name: Update Inno Setup script version
         run: |
-          sed -i "s|#define MyAppVersion ".*"|#define MyAppVersion "${{ env.VERSION }}"|' src/InnoSetupScript.iss
+          sed -i 's|#define MyAppVersion ".*"|#define MyAppVersion "${{ env.VERSION }}"|' src/InnoSetupScript.iss
 
       - name: Install dependencies
         run: dotnet restore
