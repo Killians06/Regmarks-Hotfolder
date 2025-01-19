@@ -22,7 +22,7 @@ jobs:
         id: extract_version
         run: |
           echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
-          echo "${{ github.ref_name }}"
+          echo "${{ GITHUB_REF#refs/tags/v }}"
 
       - name: Update .csproj version
         run: |
