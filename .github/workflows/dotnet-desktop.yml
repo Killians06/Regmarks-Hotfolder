@@ -13,28 +13,11 @@ jobs:
       DOTNET_INSTALL_DIR: '.\.dotnet'
 
     steps:
-      - name: Cache dotnet
-        id: cache-dotnet
-        uses: actions/cache@v3
+      - uses: actions/checkout@v4
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
         with:
-          path: ${{ env.DOTNET_INSTALL_DIR }}
-          key: ${{ runner.os }}-dotnet-9
-          restore-keys: ${{ runner.os }}-dotnet-9
-
-      - name: Install dotnet
-        if: ${{ steps.cache-dotnet.outputs.cache-hit != 'true' }}
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 9.0.x
-
-      - name: Set installed/cached dotnet path [${{ env.DOTNET_INSTALL_DIR }}]
-        run: echo "${{ env.DOTNET_INSTALL_DIR }}" | Out-File -FilePath $ENV:GITHUB_PATH -Encoding utf8 -Append
-
-      - name: Check installed/cached dotnet version
-        run: dotnet --version
-
-      - name: Check default dotnet version
-        run: dotnet --version
+          dotnet-version: '9.0.x'
 
       - name: Install dependencies
         run: dotnet restore
@@ -44,7 +27,7 @@ jobs:
 
       - name: Publish
         run: dotnet publish --output Regmarks-Hotfolder/PUBLISH
-
+        
       - name: Info
         run: dotnet workload list
 
