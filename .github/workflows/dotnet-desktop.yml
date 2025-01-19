@@ -24,7 +24,7 @@ jobs:
       - name: Info
         run: dotnet workload list
 
-  test:
+  Inno Setup:
     needs: build
     runs-on: windows-latest
     steps:
@@ -40,6 +40,12 @@ jobs:
         run: |
           mkdir -p release
           cp "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup\RegMarks Hotfolder Installer.exe" release/
+      - name: Verify Inno Setup Output
+        run: |
+          if [ ! -f "release/RegMarks Hotfolder Installer.exe" ]; then
+            echo "File not found!"
+            exit 1
+          fi
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
