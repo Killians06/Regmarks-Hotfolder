@@ -3,7 +3,7 @@
 #define MyAppPublisher "Killians Streibel"
 #define MyAppURL "https://github.com/Killians06"
 #define MyAppExeName "Hotfolder.exe"
-#define MyPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\bin\Release\net9.0-windows"
+#define MyPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup\PublishedFiles"
 #define MyIconPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\src\hotfolder.ico"
 #define MyOutputPath "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup"
 
@@ -35,7 +35,14 @@ Name: "french"; MessagesFile: "compiler:Languages\French.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "PublishedFiles\*"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\Hotfolder.deps.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\Hotfolder.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\Hotfolder.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\Hotfolder.pdb"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\Hotfolder.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\settings.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyPath}\hotfolder.ico"; DestDir: "{app}"; Flags: ignoreversion
 
 [UninstallDelete]
 Type: files; Name: "{app}\settings.json"
