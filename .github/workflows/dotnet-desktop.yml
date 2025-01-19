@@ -18,7 +18,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ env.DOTNET_INSTALL_DIR }}
-          key: ${{ runner.os }}-dotnet-7
+          key: ${{ runner.os }}-dotnet-9
           restore-keys: ${{ runner.os }}-dotnet-9
 
       - name: Install dotnet
