@@ -23,6 +23,11 @@ jobs:
         run: |
           echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
+      - name: Test
+        run: |
+          echo $VERSION
+          echo ${{ env.VERSION }}
+
       - name: Update .csproj version
         run: |
           sed -i 's|<Version>.*</Version>|<Version>${{ env.VERSION }}</Version>|' Hotfolder.csproj
