@@ -48,4 +48,9 @@ jobs:
           cp "D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup\RegMarks Hotfolder Installer.exe" release/
           cd release
           ls
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: RegMarks-Hotfolder-Installer
+          path: release/RegMarks Hotfolder Installer.exe
       
