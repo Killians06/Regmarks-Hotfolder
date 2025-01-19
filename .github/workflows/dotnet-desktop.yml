@@ -54,7 +54,7 @@ jobs:
           path: release/RegMarks Hotfolder Installer.exe
 
   release:
-    needs: test
+    needs: Inno-Setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
