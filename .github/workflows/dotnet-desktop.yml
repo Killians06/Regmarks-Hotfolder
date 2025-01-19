@@ -25,8 +25,7 @@ jobs:
 
       - name: Test
         run: |
-          echo $VERSION
-          echo ${{ env.VERSION }}
+          echo ${{ GITHUB_ENV.VERSION }}
 
       - name: Update .csproj version
         run: |
