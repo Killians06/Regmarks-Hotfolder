@@ -20,10 +20,9 @@ jobs:
 
       - name: Extract version from tag
         id: extract_version
-        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
-
-      - name: Display GITHUB_ENV
-        run: echo "$GITHUB_ENV"
+        run: |
+          echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+          echo "${{ github.ref_name }}"
 
       - name: Update .csproj version
         run: |
