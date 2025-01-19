@@ -21,10 +21,11 @@ jobs:
       - name: Extract version from tag
         id: extract_version
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+        run: echo $GITHUB_ENV
 
       - name: Update .csproj version
         run: |
-          sed -i "s/VERSION/${{ github.ref_name }}/g" Hotfolder.csproj
+          sed -i "s/VERSION/${{ GITHUB_REF#refs/tags/v }}/g" Hotfolder.csproj
 
       - name: Update Inno Setup script version
         run: |
