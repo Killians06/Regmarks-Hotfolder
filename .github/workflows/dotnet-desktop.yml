@@ -45,6 +45,11 @@ jobs:
         with:
           name: published-files
           path: InnoSetup/PublishedFiles
+      - name: Debug Downloaded Files
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Listing files in InnoSetup/PublishedFiles directory:"
+          dir InnoSetup/PublishedFiles
       - name: Inno Setup Action
         uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
         with:
