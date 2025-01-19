@@ -2,8 +2,8 @@ name: .NET Core Desktop
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*.*.*'  # Déclenche le workflow sur les tags de version
 
 jobs:
   build:
@@ -17,6 +17,20 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '9.0.x'
+
+      - name: Extract version from tag
+        id: extract_version
+        run: echo "::set-output name=VERSION::${GITHUB_REF#refs/tags/v}"
+
+      - name: Update .csproj version
+        run: |
+          sed -i 's/<Version>.*<\/Version>/<Version>${{ steps.extract_version.outputs.VERSION }}<\/Version>/' Hotfolder/Hotfolder.csproj
+          sed -i 's/<AssemblyVersion>.*<\/AssemblyVersion>/<AssemblyVersion>${{ steps.extract_version.outputs.VERSION }}.0<\/AssemblyVersion>/' Hotfolder/Hotfolder.csproj
+          sed -i 's/<FileVersion>.*<\/FileVersion>/<FileVersion>${{ steps.extract_version.outputs.VERSION }}.0<\/FileVersion>/' Hotfolder/Hotfolder.csproj
+
+      - name: Update Inno Setup script version
+        run: |
+          sed -i 's/#define MyAppVersion ".*"/#define MyAppVersion "${{ steps.extract_version.outputs.VERSION }}"/' src/InnoSetupScript.iss
 
       - name: Install dependencies
         run: dotnet restore
