@@ -17,26 +17,7 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '9.0.x'
-
-      - name: Extract version from tag
-        id: extract_version
-        run: |
-          echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
-
-      - name: Test
-        run: |
-          echo ${GITHUB_REF#refs/tags/v}
-
-      - name: Update .csproj version
-        run: |
-          sed -i 's|<Version>.*</Version>|<Version>${{ env.VERSION }}</Version>|' Hotfolder.csproj
-          sed -i 's|<AssemblyVersion>.*</AssemblyVersion>|<AssemblyVersion>${{ env.VERSION }}.0</AssemblyVersion>|' Hotfolder.csproj
-          sed -i 's|<FileVersion>.*</FileVersion>|<FileVersion>${{ env.VERSION }}.0</FileVersion>|' Hotfolder.csproj
-
-
-      - name: Update Inno Setup script version
-        run: |
-          sed -i 's|#define MyAppVersion "VERSION"|#define MyAppVersion "${{ github.ref_name }}"|' src/InnoSetupScript.iss
+          cache: true
 
       - name: Install dependencies
         run: dotnet restore
