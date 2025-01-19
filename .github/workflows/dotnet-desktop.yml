@@ -26,8 +26,8 @@ jobs:
         run: dotnet build
 
       - name: Publish
-        run: dotnet publish --output Regmarks-Hotfolder/PUBLISH
-        
+        run: dotnet publish
+
       - name: Info
         run: dotnet workload list
 
@@ -43,6 +43,13 @@ jobs:
         with:
           path: src/InnoSetupScript.iss
           options: /O+
+      - name: Debug Inno Setup Output
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Listing files in current directory:"
+          dir
+          echo "Listing files in InnoSetup directory:"
+          dir D:\a\Regmarks-Hotfolder\Regmarks-Hotfolder\InnoSetup
       - name: Save Inno Setup Output
         run: |
           mkdir -p release
@@ -53,6 +60,7 @@ jobs:
             Write-Error "File not found!"
             exit 1
           }
+        shell: pwsh
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
