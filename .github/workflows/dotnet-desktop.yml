@@ -24,7 +24,7 @@ jobs:
 
       - name: Update .csproj version
         run: |
-          sed -i "s/VERSION/${{ env.VERSION }}/g" Hotfolder/Hotfolder.csproj
+          sed -i "s/VERSION/${{ env.VERSION }}/g" Hotfolder.csproj
 
       - name: Update Inno Setup script version
         run: |
