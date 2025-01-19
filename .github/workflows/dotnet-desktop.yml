@@ -2,8 +2,8 @@ name: .NET Core Desktop
 
 on:
   push:
-    tags:
-      - 'v*.*.*'  # Déclenche le workflow sur les tags de version
+    branches:
+      - main
 
 jobs:
   build:
