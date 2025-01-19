@@ -26,9 +26,12 @@ jobs:
 
       - name: Publish
         run: dotnet publish --output Regmarks-Hotfolder/PUBLISH
-        
-      - name: Info
-        run: dotnet workload list
+
+      - name: Upload Published Files
+        uses: actions/upload-artifact@v3
+        with:
+          name: published-files
+          path: Regmarks-Hotfolder/PUBLISH
 
   Inno-Setup:
     needs: build
@@ -37,19 +40,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Debug Publish Output
-        run: |
-          echo "Current directory: $(pwd)"
-          echo "Listing files in current directory:"
-          dir
-          echo "Listing files in Regmarks-Hotfolder directory:"
-          dir Regmarks-Hotfolder
-          echo "Listing files in Regmarks-Hotfolder/PUBLISH directory:"
-          dir Regmarks-Hotfolder/PUBLISH
-      - name: Copy Published Files
-        run: |
-          mkdir -p InnoSetup/PublishedFiles
-          cp -r Regmarks-Hotfolder/PUBLISH/* InnoSetup/PublishedFiles/
+      - name: Download Published Files
+        uses: actions/download-artifact@v3
+        with:
+          name: published-files
+          path: InnoSetup/PublishedFiles
       - name: Inno Setup Action
         uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
         with:
