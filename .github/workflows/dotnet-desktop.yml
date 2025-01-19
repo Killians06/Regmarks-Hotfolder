@@ -43,7 +43,7 @@ jobs:
           echo "Listing files in current directory:"
           dir
           echo "Listing files in Regmarks-Hotfolder directory:"
-          dir Regmarks-Hotfolder
+          dir Regmarks-Hotfolder/PUBLISH
       - name: Copy Published Files
         run: |
           mkdir -p InnoSetup/PublishedFiles
