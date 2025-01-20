@@ -1,5 +1,5 @@
 #define MyAppName "Regmarks Hotfolder"
-#define MyAppVersion "1.2.0"
+#define MyAppVersion "1.2.1"
 #define MyAppPublisher "Killians Streibel"
 #define MyAppURL "https://github.com/Killians06"
 #define MyAppExeName "Hotfolder.exe"
