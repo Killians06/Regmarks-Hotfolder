@@ -1,81 +1,93 @@
-# Hotfolder RegMarks
+# 🌟 **Hotfolder RegMarks**  
 
-## Description
-
-**Hotfolder RegMarks** est une application Windows en C# conçue pour surveiller un dossier spécifique (hotfolder) et traiter automatiquement les fichiers qui y sont ajoutés. Les fonctionnalités incluent la possibilité de configurer des chaînes de recherche et de remplacement, de choisir les types de fichiers à surveiller, et de gérer les paramètres via une interface utilisateur intuitive.
-
----
-
-## Fonctionnalités principales
-
-- **Surveillance de dossiers** : Détection automatique des fichiers ajoutés dans un dossier spécifié.
-- **Configuration flexible** : Gestion des chemins d'entrée/sortie, type de fichier surveillé, et règles de remplacement via une interface utilisateur.
-- **Traitement automatique** : Application de règles de remplacement aux fichiers détectés et sauvegarde dans le dossier de sortie.
-- **Interface intuitive** : Interface graphique conviviale pour sélectionner les dossiers, configurer les règles et afficher les journaux.
-- **Persistance des paramètres** : Enregistrement et chargement automatique de la configuration utilisateur via un fichier JSON.
+🎯 **Automatisez la gestion de vos fichiers avec style !** 🎯  
+> Plateforme : **Windows**  
+> Framework : **.NET Framework 4.8+**  
+> Licence : **MIT**  
 
 ---
 
-## Prérequis
+## 📝 **Description**  
 
-- **Système d'exploitation** : Windows
-- **Framework** : .NET Framework 4.8 ou version ultérieure
-- **Dépendances** : Aucune dépendance externe
-
----
-
-## Installation
-
-1. Téléchargez l'installeur.
-2. Installez l'application dans le répertoire de votre choix
-3. Exécutez l'application.
+💼 **Hotfolder RegMarks** est une application Windows en C# qui :  
+- 🔍 **Surveille un dossier** spécifique (hotfolder).  
+- ✂️ **Traite automatiquement les fichiers** avec des règles personnalisées.  
+- 🎛️ **Propose une interface intuitive** pour une configuration rapide.  
 
 ---
 
-## Utilisation
+## 🚀 **Fonctionnalités principales**  
 
-1. Lancez l'application `Hotfolder RegMarks`.
-2. **Configurer les dossiers** :
-   - Cliquez sur `Choisir le dossier d'entrée` pour sélectionner le dossier à surveiller.
-   - Cliquez sur `Choisir le dossier de sortie` pour spécifier où sauvegarder les fichiers traités.
-3. **Configurer le type de fichier** :
-   - Sélectionnez l'extension des fichiers à surveiller dans le menu déroulant.
-4. **Gérer les chaînes de remplacement** :
-   - Cliquez sur `Gérer les remplacements` pour ajouter ou modifier les paires de recherche et de remplacement.
-5. **Démarrer la surveillance** :
-   - Cliquez sur `Démarrer la surveillance` pour surveiller les fichiers.
-   - Les fichiers ajoutés seront automatiquement traités et sauvegardés dans le dossier de sortie.
-6. **Arrêter la surveillance** :
-   - Cliquez sur `Arrêter la surveillance` pour désactiver la surveillance.
-7. **Arrêter la surveillance** :
-   - Cliquez sur `Surveillance au lancement` pour activer la surveillance automatiquement au prochain lancement de l'application.
+- 📂 **Surveillance de dossiers** : Détection en temps réel des fichiers ajoutés.  
+- ⚙️ **Configuration flexible** : Chemins, types de fichiers, et règles personnalisables.  
+- 📝 **Traitement automatique** : Modifications et sauvegardes instantanées.  
+- 🖥️ **Interface utilisateur intuitive** : Simple et efficace pour tous les utilisateurs.  
+- 💾 **Persistance des paramètres** : Votre configuration enregistrée en JSON.  
 
 ---
 
-## Structure du projet
+## 📋 **Prérequis**  
 
-- **MainForm** : La classe principale gérant l'interface utilisateur et la logique de surveillance.
-- **ManageWindow** : Fenêtre secondaire pour gérer les chaînes de remplacement.
-- **Config** : Classe pour la gestion des paramètres utilisateur (fichiers JSON).
-
----
-
-## Fonctionnalités à venir
-
-- Support pour des types de fichiers supplémentaires.
-- Notifications système lors de la détection et du traitement des fichiers.
-- Historique détaillé des opérations.
+🔧 Configuration minimale requise :  
+- 🖥️ **Système d'exploitation** : Windows  
+- ⚙️ **Framework** : .NET Framework 4.8 ou version ultérieure  
+- 🔗 **Dépendances** : Aucune dépendance externe  
 
 ---
 
-## Auteurs
+## 📦 **Installation**  
 
-Ce projet a été développé par Killians Streibel. 
+### 🛠️ Étapes :  
+1. 📥 Téléchargez l'installeur via le site officiel.  
+2. 📂 Installez l’application dans un répertoire de votre choix.  
+3. ▶️ Lancez `Hotfolder RegMarks` et commencez à automatiser votre travail !  
+
+---
+
+## 📖 **Utilisation**  
+
+1. ▶️ **Lancez l’application.**  
+2. 📂 **Configurer les dossiers** :  
+   - Sélectionnez un dossier d’entrée et un dossier de sortie.  
+3. 📑 **Configurer le type de fichier** :  
+   - Choisissez les extensions à surveiller (ex. `.tps`, `.dxf`, `.txt`).  
+4. ✏️ **Gérer les chaînes de remplacement** :  
+   - Ajoutez/modifiez des paires **Recherche → Remplacement**.  
+5. 🔍 **Démarrer la surveillance** :  
+   - Activez la surveillance pour traiter automatiquement les fichiers.  
+6. 🛑 **Arrêter la surveillance** :  
+   - Désactivez la surveillance à tout moment.  
+7. ⚡ **Surveillance automatique** :  
+   - Activez cette option pour surveiller dès le lancement.  
 
 ---
 
-## Licence
+## 🏗️ **Structure du projet**  
 
-Ce projet est distribué sous la licence [MIT](LICENSE).
+📦 Organisation des composants :  
+
+- 🖼️ **MainForm** : Interface utilisateur principale et gestion de la surveillance.  
+- 🪟 **ManageWindow** : Fenêtre secondaire pour configurer les remplacements.  
+- 🛠️ **Config** : Gestion des paramètres utilisateur enregistrés en JSON.  
 
 ---
+
+## 🔮 **Fonctionnalités à venir**  
+
+✨ **Support multi-types de fichiers** : Compatibilité avec davantage d’extensions.  
+✨ **Notifications système** : Avertissements lors de la détection de fichiers.  
+✨ **Historique des opérations** : Suivi des fichiers traités.  
+
+---
+
+## 👨‍💻 **Auteurs**  
+
+🧑‍💻 Ce projet est conçu et développé par **Killians Streibel**.  
+
+🎉 Merci pour votre intérêt et votre utilisation de **Hotfolder RegMarks** ! 🎉  
+
+---
+
+## 📜 **Licence**  
+
+**Ce projet est distribué sous la licence MIT.**  
