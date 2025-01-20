@@ -1,8 +1,8 @@
 # 🌟 **Hotfolder RegMarks**
-![Dernier commit](https://img.shields.io/github/last-commit/Killians06/Regmarks-Hotfolder?style=flat-square)  ![Latest Release](https://img.shields.io/github/v/release/Killians06/Regmarks-Hotfolder?display_name=tag&label=Release)
+[![Dernier Commit](https://img.shields.io/github/last-commit/Killians06/Regmarks-Hotfolder)](https://github.com/Killians06/Regmarks-Hotfolder/commits/main) [![Latest Release](https://img.shields.io/github/v/release/Killians06/Regmarks-Hotfolder?display_name=tag&label=Release)](https://github.com/Killians06/Regmarks-Hotfolder/releases/latest)
 
 ## 🚀 Build Status
-![Build Status](https://github.com/Killians06/Regmarks-Hotfolder/actions/workflows/dotnet-desktop.yml/badge.svg)
+[![Build Status](https://github.com/Killians06/Regmarks-Hotfolder/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/Killians06/Regmarks-Hotfolder/actions)
 
 
 🎯 **Automatisez la gestion de vos fichiers avec style !** 🎯  
