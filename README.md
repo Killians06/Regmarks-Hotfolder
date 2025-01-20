@@ -67,7 +67,7 @@
 📦 Organisation des composants :  
 
 - 🖼️ **MainForm** : Interface utilisateur principale et gestion de la surveillance.  
-- 🪟 **ManageWindow** : Fenêtre secondaire pour configurer les remplacements.  
+- 📋 **ManageWindow** : Fenêtre secondaire pour configurer les remplacements.  
 - 🛠️ **Config** : Gestion des paramètres utilisateur enregistrés en JSON.  
 
 ---
