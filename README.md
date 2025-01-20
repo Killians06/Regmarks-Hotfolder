@@ -43,7 +43,7 @@
 ## 📦 **Installation**  
 
 ### 🛠️ Étapes :  
-1. 📥 Téléchargez l'installeur via la partie Release du Repo.  
+1. 📥 Téléchargez l'installeur via la partie Release du Repo. [![Latest Release](https://img.shields.io/github/v/release/Killians06/Regmarks-Hotfolder?display_name=tag&label=Release)](https://github.com/Killians06/Regmarks-Hotfolder/releases/latest)
 2. 📂 Installez l’application dans un répertoire de votre choix.  
 3. ▶️ Lancez `Hotfolder RegMarks` et commencez à automatiser votre travail !  
 
