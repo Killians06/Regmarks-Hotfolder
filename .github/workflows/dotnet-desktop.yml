@@ -6,7 +6,7 @@ on:
       - 'v*.*.*'  # Déclenche le workflow sur les tags de version
 
 jobs:
-  build:
+  build-windows:
     runs-on: windows-latest
     env:
       DOTNET_INSTALL_DIR: '.\.dotnet'
@@ -16,7 +16,7 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '9.0.x'
+          dotnet-version: '6.0.x'
 
       - name: Install dependencies
         run: dotnet restore
@@ -31,6 +31,33 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: published-files
+          path: Regmarks-Hotfolder/PUBLISH
+
+  build-linux:
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_INSTALL_DIR: '.\.dotnet'
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build
+
+      - name: Publish
+        run: dotnet publish --output Regmarks-Hotfolder/PUBLISH
+
+      - name: Upload Published Files
+        uses: actions/upload-artifact@v3
+        with:
+          name: published-files-linux
           path: Regmarks-Hotfolder/PUBLISH
 
   Inno-Setup:
@@ -80,15 +107,20 @@ jobs:
           path: release/RegMarks Hotfolder Installer.exe
 
   release:
-    needs: Inno-Setup
+    needs: [Inno-Setup, build-linux]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Download Artifact
+      - name: Download Windows Installer
         uses: actions/download-artifact@v3
         with:
           name: RegMarks-Hotfolder-Installer
+          path: ./release
+      - name: Download Linux Published Files
+        uses: actions/download-artifact@v3
+        with:
+          name: published-files-linux
           path: ./release
       - name: Create Release
         id: create_release
@@ -100,7 +132,7 @@ jobs:
           release_name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
-      - name: Upload Release Asset
+      - name: Upload Windows Installer
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -108,4 +140,13 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./release/RegMarks Hotfolder Installer.exe
           asset_name: RegMarks Hotfolder Installer.exe
+          asset_content_type: application/octet-stream
+      - name: Upload Linux Application
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./release/Regmarks-Hotfolder
+          asset_name: Regmarks-Hotfolder
           asset_content_type: application/octet-stream
