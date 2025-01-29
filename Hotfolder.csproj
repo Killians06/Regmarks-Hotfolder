@@ -29,7 +29,7 @@
     <None Update="hotfolder.ico">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="settings.json">
+    <None Include="settings.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
