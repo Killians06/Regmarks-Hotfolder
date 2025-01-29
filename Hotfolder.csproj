@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net6.0;net9.0-windows</TargetFrameworks>
+    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">net6.0</TargetFramework>
+    <TargetFramework Condition="'$(OS)' == 'Windows_NT'">net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
@@ -20,7 +21,7 @@
     <Copyright>Killians Streibel</Copyright>
     <EnableWindowsTargeting Condition="'$(OS)' != 'Windows_NT'">true</EnableWindowsTargeting>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-windows'">
+  <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
     <UseWindowsForms>true</UseWindowsForms>
   </ItemGroup>
   <ItemGroup>
