@@ -30,13 +30,13 @@ jobs:
       - name: Upload Published Files
         uses: actions/upload-artifact@v3
         with:
-          name: published-files
+          name: published-files-windows
           path: Regmarks-Hotfolder/PUBLISH
 
   build-linux:
     runs-on: ubuntu-latest
     env:
-      DOTNET_INSTALL_DIR: '.\.dotnet'
+      DOTNET_INSTALL_DIR: './.dotnet'
 
     steps:
       - uses: actions/checkout@v4
@@ -70,7 +70,7 @@ jobs:
       - name: Download Published Files
         uses: actions/download-artifact@v3
         with:
-          name: published-files
+          name: published-files-windows
           path: InnoSetup/PublishedFiles
       - name: Debug Downloaded Files
         run: |
