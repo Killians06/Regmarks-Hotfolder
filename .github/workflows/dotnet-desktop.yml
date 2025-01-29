@@ -61,7 +61,7 @@ jobs:
           path: Regmarks-Hotfolder/PUBLISH
 
   Inno-Setup:
-    needs: build
+    needs: build-windows
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
