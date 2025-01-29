@@ -18,7 +18,7 @@
     <AssemblyCompany>Killians Streibel</AssemblyCompany>
     <AssemblyProduct>Hotfolder Regmarks</AssemblyProduct>
     <Copyright>Killians Streibel</Copyright>
-    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <EnableWindowsTargeting Condition="'$(OS)' != 'Windows_NT'">true</EnableWindowsTargeting>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-windows'">
     <UseWindowsForms>true</UseWindowsForms>
