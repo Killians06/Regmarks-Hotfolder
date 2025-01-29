@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">net6.0</TargetFramework>
-    <TargetFramework Condition="'$(OS)' == 'Windows_NT'">net9.0</TargetFramework>
+    <TargetFrameworks>net6.0;net9.0-windows</TargetFrameworks>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
@@ -19,9 +18,9 @@
     <AssemblyCompany>Killians Streibel</AssemblyCompany>
     <AssemblyProduct>Hotfolder Regmarks</AssemblyProduct>
     <Copyright>Killians Streibel</Copyright>
-    <EnableWindowsTargeting Condition="'$(OS)' != 'Windows_NT'">true</EnableWindowsTargeting>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
-  <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-windows'">
     <UseWindowsForms>true</UseWindowsForms>
   </ItemGroup>
   <ItemGroup>
