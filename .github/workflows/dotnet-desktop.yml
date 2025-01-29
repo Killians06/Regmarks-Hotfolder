@@ -146,6 +146,7 @@ jobs:
           asset_path: ./release/RegMarks Hotfolder Installer.exe
           asset_name: RegMarks Hotfolder Installer.exe
           asset_content_type: application/octet-stream
+          asset_label: "Windows Installer"
       - name: Upload Linux Application
         uses: actions/upload-release-asset@v1
         env:
@@ -153,5 +154,6 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./release/RegMarks-Hotfolder-Linux
-          asset_name: RegMarks Hotfolder Linux
+          asset_name: RegMarks-Hotfolder-Linux
           asset_content_type: application/octet-stream
+          asset_label: "Linux Application"
