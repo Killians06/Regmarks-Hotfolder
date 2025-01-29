@@ -119,6 +119,11 @@ jobs:
         with:
           name: published-files-linux
           path: ./release
+      - name: Debug Release Directory
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Listing files in release directory:"
+          ls -la ./release
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
